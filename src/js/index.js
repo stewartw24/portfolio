@@ -1,5 +1,7 @@
 const menuComp = document.querySelector("ws-hex-menu");
 
+import FIREBASE_API_KEY from './apikey.js';
+
 const listItems = [
   {
     title: "Angular icon",
@@ -266,7 +268,13 @@ const setSectionColours = (section) => {
 //firestore link
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  
+  apiKey: FIREBASE_API_KEY,
+  authDomain: "ws-portfolio-data.firebaseapp.com",
+  projectId: "ws-portfolio-data",
+  storageBucket: "ws-portfolio-data.appspot.com",
+  messagingSenderId: "799664281648",
+  appId: "1:799664281648:web:546177e82bfc47deb6b5f5",
+  measurementId: "G-1E6V6BM36Z",
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
