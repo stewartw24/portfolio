@@ -202,6 +202,7 @@ const theContactSection = `<div class="contact">
 </section>
 </div>`
 
+//set the menu position
 menuComp.menuLink = listItems;
 menuComp.style.zIndex = "1000";
 menuComp.style.animation = "moveInBottomMenu 1.6s ease-out .75s";
