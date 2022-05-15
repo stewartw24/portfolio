@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Developer portfolio for William Stewart</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="src/css/style.css">
+    <script type="module" src="src/js/index.js"></script>
+    <script type='module' src='https://unpkg.com/ws-menu-components@0.0.11/dist/menu-components/menu-components.esm.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    
+</head>
+<body>
+
+    <div class="stay animate-menu">
+        <ws-hex-menu></ws-hex-menu>
+    </div>
+
+    <div class="content" id="content"></div>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+    <script src="https://kit.fontawesome.com/79f38df92a.js" crossorigin="anonymous"></script>
+</body>
+</html>
+
+<div hidden>
+    <div class="home">
+        <header class="layout" id="header">
+
+            <div class="intro-box">
+                <h1 class="heading-primary">
+                    <span class="heading-primary-main animate-left">Hi,</span>
+                    <span class="heading-primary-main animate-right">I'm Will,</span>
+                    <span class="heading-primary-sub animate-bottom">frontend developer</span>
+                </h1>
+            </div>
+    
+            <div class="logo fade-in">
+                <div class="pos-1">
+                    <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+                <div class="pos-2">
+                    <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+                <div class="pos-3">
+                    <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+                <div class="pos-4">
+                    <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+                <div class="pos-5">
+                    <svg version="1.1" viewBox="0 0 600 516.8">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div class="about">
+        <section class="layout" id="about">
+            <div class="text-area">
+                <h3 class="heading-tertiary margin-bottom-small margin-left-small fade-in">A bit about me</h3>
+                    <figure class="arrowBg">
+                        <img src="src/images/me.jpg" alt="profile" class="profile-pic animate-bottom" />
+                    </figure>
+                    <div class="about-text animate-right">
+                        <p>
+                            TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
+                        TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
+                        TEST TEST TEST TEST TEST
+                        </p>
+                        <p class="p-margin-left-small">
+                         TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TESTTEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
+                        TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
+                        TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
+                        TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
+                        </p>
+                    </div>
+            </div>
+            <div class="logo fade-in">
+                <div class="pos-1">
+                    <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+                <div class="pos-2">
+                    <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+                <div class="pos-3">
+                    <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+                <div class="pos-4">
+                    <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+                <div class="pos-5">
+                    <svg version="1.1" viewBox="0 0 600 516.8">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="projects">
+        <section class="ext-layout" id="projects">
+            <h2 class="projects-heading fade-in">Side Projects</h2>
+            <ul class="projects-container extra-margin-top">
+                <li class="projects-item">
+                    <div class="projects-image animate-left">
+                        <img src="src/images/me.jpg" alt="" class="projects-pic animate-right">
+                    </div>
+                    <div class="projects-detail fade-in">
+                        <h3>Yes, this is doge</h3>
+                        Very modern! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae error nihil laborum alias, quis voluptate rem veniam. Rem voluptas, voluptatem eos nulla necessitatibus accusantium animi dicta sequi, voluptate, dolores veritatis.
+                    </div>
+                </li>
+                <li class="projects-item">
+                    <div class="projects-image animate-left">
+                        <img src="src/images/me.jpg" alt="" class="projects-pic animate-right">
+                    </div>
+                    <div class="projects-detail fade-in">
+                        <h3>Yes, this is doge</h3>
+                        Very modern! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae error nihil laborum alias, quis voluptate rem veniam. Rem voluptas, voluptatem eos nulla necessitatibus accusantium animi dicta sequi, voluptate, dolores veritatis.
+                    </div>
+                </li>
+                <li class="projects-item">
+                    <div class="projects-image animate-left">
+                        <img src="src/images/me.jpg" alt="" class="projects-pic animate-right">
+                    </div>
+                    <div class="projects-detail fade-in">
+                        <h3>Yes, this is doge</h3>
+                        Very modern! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae error nihil laborum alias, quis voluptate rem veniam. Rem voluptas, voluptatem eos nulla necessitatibus accusantium animi dicta sequi, voluptate, dolores veritatis.
+                    </div>
+                </li>
+            </ul>
+
+            
+                <div class="logo fade-in">
+                    <div class="pos-1">
+                        <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                            <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                        </svg>
+                    </div>
+                    <div class="pos-2">
+                        <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                            <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                        </svg>
+                    </div>
+                    <div class="pos-3">
+                        <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                            <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                        </svg>
+                    </div>
+                    <div class="pos-4">
+                        <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                            <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                        </svg>
+                    </div>
+                    <div class="pos-5">
+                        <svg version="1.1" viewBox="0 0 600 516.8">
+                            <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                        </svg>
+                    </div>
+                </div>
+            
+            
+        </section>
+    </div>
+
+    <div class="experience">
+        <section class="ext-layout" id="experience">
+            <h2 class="exp-heading fade-in">Previous Experience</h2>
+            <ul class="cards">
+                <li class="cards__item">
+                  <div class="card">
+                    <figure class="experience-image card__image overlay">
+                        <img src="src/images/me.jpg" alt="profile" class="profile-pic animate-bottom tran" />
+                    </figure>
+                    <div class="card__content">
+                      <div class="card__title">Flex Grow</div>
+                      <p class="card__text">This defines the ability for a flex item to grow if necessary. It accepts a unitless value that serves as a proportion. It dictates what amount of the available space inside the flex container the item should take up.</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="cards__item">
+                  <div class="card">
+                    <figure class="experience-image card__image overlay">
+                        <img src="src/images/me.jpg" alt="profile" class="profile-pic animate-bottom tran" />
+                    </figure>
+                    <div class="card__content">
+                      <div class="card__title">Flex Shrink</div>
+                      <p class="card__text">This defines the ability for a flex item to shrink if necessary. Negative numbers are invalid.</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="cards__item">
+                  <div class="card">
+                    <figure class="experience-image card__image overlay">
+                        <img src="src/images/me.jpg" alt="profile" class="profile-pic animate-bottom tran"/>
+                    </figure>
+                    <div class="card__content">
+                      <div class="card__title">Flex Basis</div>
+                      <p class="card__text">This defines the default size of an element before the remaining space is distributed. It can be a length (e.g. 20%, 5rem, etc.) or a keyword. The auto keyword means "look at my width or height property."</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            
+            
+            
+            <div class="logo fade-in">
+                <div class="pos-1">
+                    <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+                <div class="pos-2">
+                    <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+                <div class="pos-3">
+                    <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+                <div class="pos-4">
+                    <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+                <div class="pos-5">
+                    <svg version="1.1" viewBox="0 0 600 516.8">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- <div class="contact">
+        <section class="contact-layout" id="contact">
+            
+            <div class="wrapper">
+                <h2>Get in touch</h2>
+                <form id="contactForm">
+                  <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" name="Name" id="name" placeholder="First and Last" required minlength="3" maxlength="25" />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" name="Email" id="email" placeholder="email@domain.tld" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="Message" id="message" rows="5" placeholder="Type your message here...."></textarea>
+                  </div>
+                  <div class="form-group">
+                    <button class="contact-submit"><i class="far fa-paper-plane"></i>Send</button>
+                  </div>
+                </form>
+              </div>
+            
+            <div class="logo fade-in">
+                <div class="pos-1">
+                    <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+                <div class="pos-2">
+                    <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+                <div class="pos-3">
+                    <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+                <div class="pos-4">
+                    <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+                <div class="pos-5">
+                    <svg version="1.1" viewBox="0 0 600 516.8">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+    </div> -->
+
+    <div class="feedback">
+        <section class="layout" id="feedback">
+            THIS IS THE FEEDBACK SECTION
+            
+            <div class="logo fade-in">
+                <div class="pos-1">
+                    <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+                <div class="pos-2">
+                    <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+                <div class="pos-3">
+                    <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+                <div class="pos-4">
+                    <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+                <div class="pos-5">
+                    <svg version="1.1" viewBox="0 0 600 516.8">
+                        <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+
