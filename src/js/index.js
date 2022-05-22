@@ -1,7 +1,5 @@
 const menuComp = document.querySelector("ws-hex-menu");
 
-import FIREBASE_API_KEY from './apikey.js';
-
 const listItems = [
   {
     title: "Angular icon",
@@ -169,7 +167,27 @@ const theContactSection = `<div class="contact">
             <textarea name="Message" id="message" rows="5" placeholder="Type your message here...."></textarea>
           </div>
           <div class="form-group">
-            <button class="contact-submit"><i class="far fa-paper-plane"></i>Send</button>
+          <div class="beside">
+          <button id="contact-submit">
+            <div class=contact-button-wrapper>
+              <div class="hexagon-container">
+              <div class="hexagon-border hexagon"></div>
+              <div class="hexagon-background hexagon"></div>
+            </div>
+            <div class="icon-container">
+              <svg class="plane-send" viewBox="0 0 512.005 512.005" width="50px">
+                <path d="M511.658 51.675c2.496-11.619-8.895-21.416-20.007-17.176l-482 184a15 15 0 00-.054 28.006L145 298.8v164.713a15 15 0 0028.396 6.75l56.001-111.128 136.664 101.423c8.313 6.17 20.262 2.246 23.287-7.669C516.947 34.532 511.431 52.726 511.658 51.675zm-118.981 52.718L157.874 271.612 56.846 232.594zM175 296.245l204.668-145.757c-176.114 185.79-166.916 176.011-167.684 177.045-1.141 1.535 1.985-4.448-36.984 72.882zm191.858 127.546l-120.296-89.276 217.511-229.462z"></path>
+              </svg>
+              <svg class="success" viewBox="0 0 512.005 512.005" width="60px">
+              
+              <path d="m395.621094 185.636719-161.011719 153.902343-87.804687-87.679687c-4.855469-4.855469-12.726563-4.855469-17.585938 0-4.855469 4.859375-4.855469 12.730469 0 17.589844l96.410156 96.410156c2.339844 2.351563 5.535156 3.65625 8.855469 3.613281 3.21875.03125 6.316406-1.226562 8.605469-3.492187l169.742187-162.257813c4.921875-4.769531 5.082031-12.613281.363281-17.578125-4.726562-4.960937-12.566406-5.1875-17.574218-.507812zm0 0"/>
+              </svg>
+              <div class="button-instruction">Send</div>
+            </div>
+          </div>
+          </button>
+          <div class="thanks-message"> Thanks for reaching out!</div>
+          </div>
           </div>
         </form>
       </div>
@@ -213,7 +231,7 @@ if (window.screen.availWidth > 600) {
   menuComp.style.left = "40px";
 } else {
   menuComp.style.top = "10px";
-  menuComp.style.left = "20px";
+  menuComp.style.left = "18px";
 }
 
 const tileFinderEl = document.querySelector("ws-hex-menu");
@@ -265,51 +283,67 @@ const setSectionColours = (section) => {
   }
 };
 
-//firestore link
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: FIREBASE_API_KEY,
-  authDomain: "ws-portfolio-data.firebaseapp.com",
-  projectId: "ws-portfolio-data",
-  storageBucket: "ws-portfolio-data.appspot.com",
-  messagingSenderId: "799664281648",
-  appId: "1:799664281648:web:546177e82bfc47deb6b5f5",
-  measurementId: "G-1E6V6BM36Z",
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-db.settings({ timestampsInSnapshots: true });
-
 const setTheContactSection = () => {
   const content = document.getElementById("content");
       content.innerHTML = theContactSection;
-
-      const contactForm = document.querySelector('#contactForm');
-      const contactName = document.querySelector("#name");
-      const contactEmail = document.querySelector("#email");
-      const contactMessage = document.querySelector("#message");
-
-
-      contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      // console.log(e);
-
-      if (contactName.value && contactEmail.value && contactMessage.value) {
-        const item = {
-          name: contactName.value,
-          email: contactEmail.value,
-          message: contactMessage.value,
-          read: 'no'
-        };
-        db.collection("contact").add(item).then((res) => {
-            contactName.value = "";
-            contactEmail.value = "";
-            contactMessage.value = "";
-            console.log('this is the response');
-            console.log(res);
-          });
-        }
-      });
+      submitTheContactMessage();
 }
 
+function submitTheContactMessage() {
+  const contactForm = document.querySelector('#contactForm');
+  const contactName = document.querySelector("#name");
+  const contactEmail = document.querySelector("#email");
+  const contactMessage = document.querySelector("#message");
+
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    toggleAni('.contact-button-wrapper', true);  
+
+    if (contactName.value && contactEmail.value && contactMessage.value) {
+      const item = {
+        name: contactName.value,
+        email: contactEmail.value,
+        message: contactMessage.value,
+      };
+
+      sendHttpRequest('POST', 'https://firestore-api-server.herokuapp.com/api/contact', item).then((res) => {
+        if(res.status === 200){
+          toggleAni('.contact-button-wrapper', false);
+          const plane = document.querySelector('.plane-send');
+          plane.style.display = 'none';
+          const success = document.querySelector('.success');
+          success.style.display = 'block';
+          success.style.fill = 'var(--color-green)';
+          const buttonInstruction = document.querySelector('.button-instruction');
+          buttonInstruction.style.display = 'none';
+          const hexBorder = document.querySelector('.hexagon-border');
+          hexBorder.style.color = 'var(--color-green)';
+          const contactButton = document.querySelector('.contact-button-wrapper');
+          contactButton.style.color = 'var(--color-green)';
+          const thanksMessage = document.querySelector('.thanks-message');
+          thanksMessage.style.display = 'block';
+        }
+      }) 
+    }
+  });
+}
+
+const sendHttpRequest = async function(method, url, data) {
+  const res = await fetch(url, {
+    method: method,
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  return res;
+}
+
+const toggleAni = (el, trueOrFalse) => {
+  const t = document.querySelector(el)
+    t.removeAttribute("clicked")
+    if(trueOrFalse === true){
+      t.setAttribute("clicked", trueOrFalse)
+    }
+  }
