@@ -222,6 +222,12 @@ const theContactSection = `<div class="contact">
 </section>
 </div>`
 
+const theFeedbackSection = `
+
+
+
+`
+
 //set the menu position
 menuComp.menuLink = listItems;
 menuComp.style.zIndex = "1000";
@@ -323,6 +329,9 @@ function submitTheContactMessage() {
           contactButton.style.color = 'var(--color-green)';
           const thanksMessage = document.querySelector('.thanks-message');
           thanksMessage.style.display = 'block';
+          contactName.value = '';
+          contactEmail.value = '';
+          contactMessage.value = '';
         }
       }) 
     }
