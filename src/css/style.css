@@ -451,10 +451,6 @@ h3 {
   top: 0;
 }
 
-/* .projects-item:nth-of-type(1){
-  margin-top: 0vh;
-} */
-
 .experience-image {
   filter: drop-shadow(1px 0px 0px var(--color-purple))
     drop-shadow(-1px 0px 0px var(--color-purple))
@@ -481,7 +477,7 @@ h3 {
 
 .exp-heading {
   text-align: center;
-  padding-top: 4%;
+  padding-top: 2%;
   font-size: 250%;
   margin-bottom: 6vh;
 }
@@ -490,7 +486,6 @@ h3 {
   text-align: center;
   padding-top: 2%;
   font-size: 250%;
-  /* margin-bottom: 6vh; */
 }
 
 .cards {
@@ -504,7 +499,7 @@ h3 {
 .cards__item {
   display: flex;
   padding: 1rem;
-  margin-bottom: 20vh;
+  margin-bottom: 22vh;
 }
 
 .card {
@@ -541,7 +536,6 @@ h3 {
 .card__image::before {
   content: "";
   display: block;
-  /* padding-top: 56.25%; */
 }
 
 .card__title {
@@ -572,7 +566,6 @@ h3 {
   width: 70px;
   height: 70px;
   position: relative;
-/*   transition: transform .4s; */
   cursor: pointer;
 }
 
@@ -632,7 +625,6 @@ h3 {
   left: 0;
   width: 100%;
   height: 100%;
-/*   transform-origin: center center; */
 }
 .hexagon:before {
   transform: rotate(60deg);
@@ -642,14 +634,13 @@ h3 {
 }
 
 .contact-button-wrapper[clicked] .hexagon-container {
-/*   transform: rotate(360deg); */
   animation: loading 1s linear infinite;
 }
 .contact-button-wrapper[clicked] .hexagon-border {
   color: var(--color-dark-pink);
 }
 .contact-button-wrapper svg {
-  color: var(--color-light-black);;
+  color: var(--color-light-black);
   fill: currentcolor;
   transition: all .4s;
 }
@@ -660,6 +651,11 @@ h3 {
 
 .contact-button-wrapper[clicked] .button-instruction {
   color: var(--color-dark-pink);
+}
+
+.button-instruction {
+  color: var(--color-black);
+  font-weight: 900;
 }
 
 .beside {
@@ -679,7 +675,6 @@ h3 {
 
 button, input[type="submit"], input[type="reset"] {
 	background: none;
-	/* color: inherit; */
 	border: none;
 	padding: 0;
 	font: inherit;
@@ -689,6 +684,7 @@ button, input[type="submit"], input[type="reset"] {
 
 .plane-send {
   display: block;
+  fill: var(--color-light-black);
 }
 
 .success {
@@ -705,10 +701,18 @@ button, input[type="submit"], input[type="reset"] {
 
 .form__group {
   display: flex;
-  /* flex-grow: 1; */
   justify-content: space-evenly;
 }
 
+.build-statement {
+  text-align: center;
+  position: relative;
+  bottom: -35%;
+  margin: auto;
+  width: 50%;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
 
 
 /**896px min****/
@@ -717,12 +721,6 @@ button, input[type="submit"], input[type="reset"] {
     width: 25%;
   }
 }
-
-/* @media (min-width: 1600px){
-  .projects-item:nth-of-type(1){
-    margin-top: 0vh;
-  }
-} */
 
 @media (min-width: 750px) {
   .projects-heading {
@@ -736,18 +734,31 @@ button, input[type="submit"], input[type="reset"] {
   }
 }
 
+@media only screen and (max-width: 1050px) {
+  .contact-layout {
+    height: 140vh;
+    background-color: var(--color-chalk);
+    background-size: cover;
+    position: relative;
+  }
+}
+
 @media only screen and (max-width: 600px) {
+
+  .build-statement {
+    bottom: -15%;
+    width: 85%;
+  }
   
   .projects-heading {
     padding-top: 25%;
     margin-bottom: 6vh;
   }
 
-  .exp-heading{
+  /* .exp-heading{
     padding-top: 25%;
-    /* padding-bottom: 10% */
     margin-bottom: 2%;
-  }
+  } */
   .cards__item {
     margin-bottom: 5vh;
   }
@@ -796,8 +807,8 @@ button, input[type="submit"], input[type="reset"] {
   }
 
   .about-text {
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: 0.875rem;
+    /* font-weight: 600; */
   }
 
   .about-section {
@@ -805,7 +816,7 @@ button, input[type="submit"], input[type="reset"] {
   }
 
   .layout {
-    height: 100vh;
+    height: 150vh;
     margin-bottom: 0;
   }
 
@@ -872,12 +883,28 @@ button, input[type="submit"], input[type="reset"] {
     0 0px 10px rgba(0, 0, 0, 0.05), 0 0px 17.9px rgba(0, 0, 0, 0.06),
     0 0px 33.4px rgba(0, 0, 0, 0.072), 0 0px 80px rgba(0, 0, 0, 0.1);
 }
-/* h2 {
-  background: rgba(173, 216, 230, 0.7);
-  letter-spacing: 0.1rem;
-  padding: 1rem;
-  cursor: default;
-} */
+
+@media only screen and (max-width: 700px) {
+  .wrapper {
+    top: 10%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .wrapper {
+    width: 55%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .wrapper {
+    width: 45%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .wrapper {
+    width: 35%;
+  }
+}
+
 form,
 input,
 textarea,
@@ -894,7 +921,6 @@ button {
 .form-group textarea {
   width: 100%;
   padding: 1rem 0.8rem;
-  /* border: 1px solid rgba(0, 0, 0, 0.2); */
   outline: 0;
   transition: border 0.15s;
   border: 2px solid var(--color-grey-2);
@@ -979,32 +1005,6 @@ i {
   padding-top: 3%;
 }
 
-/* .form-radio-desc {
-  padding-top: 25%;
-  padding-left: 9%;
-} */
-
 .form-padding {
   margin-left: 8%;
-}
-
-@media screen and (min-width: 576px) {
-  .wrapper {
-    width: 70%;
-  }
-}
-@media screen and (min-width: 768px) {
-  .wrapper {
-    width: 55%;
-  }
-}
-@media screen and (min-width: 992px) {
-  .wrapper {
-    width: 45%;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .wrapper {
-    width: 35%;
-  }
 }
