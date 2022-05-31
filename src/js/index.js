@@ -150,7 +150,7 @@ const listItems = [
 
 const theContactSection = `<div class="contact">
 <section class="contact-layout" id="contact">
-    <div class="wrapper">
+    <div class="wrapper animate-left-fast">
         <h2>Get in touch</h2>
         <form id="contactForm">
           <div class="form-group">
@@ -223,7 +223,7 @@ const theContactSection = `<div class="contact">
 const theFeedbackSection = `
 <div class="feedback">
 <section class="layout" id="feedback">
-    <div class="wrapper">
+    <div class="wrapper animate-right">
         <h2>Feedback</h2>
         <form id="feedbackForm">
             <h3 class="feedback-text">Rate this site</h3>
@@ -278,7 +278,7 @@ const theFeedbackSection = `
           </div>
         </form>
       </div>
-      <div class="build-statement">built with HTML, CSS, JavaScript, StencilJS, NodeJS, and Firebase. Hosted on Netlify and Heroku.</div>
+      <div class="build-statement animate-bottom">built with HTML, CSS, JavaScript, StencilJS, NodeJS, and Firebase. Hosted on Netlify and Heroku.</div>
     <div class="logo fade-in">
         <div class="pos-1">
             <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
