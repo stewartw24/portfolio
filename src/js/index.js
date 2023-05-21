@@ -1,54 +1,54 @@
-const menuComp = document.querySelector("ws-hex-menu");
+const menuComp = document.querySelector('ws-hex-menu');
 
 const listItems = [
   {
-    title: "Angular icon",
-    ariaLabeledBy: "simpleicons-angular-icon",
-    url: "#home",
-    colour: "#DD0031",
-    svgPath1: "M9.93 12.645h4.134L11.996 7.74",
+    title: 'Angular icon',
+    ariaLabeledBy: 'simpleicons-angular-icon',
+    url: '#home',
+    colour: '#DD0031',
+    svgPath1: 'M9.93 12.645h4.134L11.996 7.74',
     svgPath2:
-      "M11.996.009L.686 3.988l1.725 14.76 9.585 5.243 9.588-5.238L23.308 3.99 11.996.01zm7.058 18.297h-2.636l-1.42-3.501H8.995l-1.42 3.501H4.937l7.06-15.648 7.057 15.648z",
+      'M11.996.009L.686 3.988l1.725 14.76 9.585 5.243 9.588-5.238L23.308 3.99 11.996.01zm7.058 18.297h-2.636l-1.42-3.501H8.995l-1.42 3.501H4.937l7.06-15.648 7.057 15.648z',
   },
   {
-    title: "Gulp icon",
-    ariaLabeledBy: "simpleicons-gulp-icon",
-    url: "#about",
-    colour: "#DA4648",
+    title: 'Gulp icon',
+    ariaLabeledBy: 'simpleicons-gulp-icon',
+    url: '#about',
+    colour: '#DA4648',
     svgPath1:
-      "M15.156 19.432l.636-1.084s-1.444.591-3.86.591c-2.418 0-3.84-.568-3.84-.568l.711 1.183.252 3.729c0 .403 1.314.718 2.936.718 1.623 0 2.938-.314 2.938-.718l.229-3.835v-.016zm.615-7.046c-.769.046-1.153.903-1.539 1.805-.143.33-.63 1.737-.948 1.563-.318-.173.413-1.329.619-2.017-.237.174-1.105.849-1.329.215-.358.314-1.129.48-1.042-.329-.191.345-.621.823-1.139.614-.673-.255.395-2.411.66-2.307.266.121-.053.6-.136.794-.186.419-.398.958-.255 1.063.24.194.904-.703.919-.719.124-.165.479-1.229.763-1.107.285.134-.711 1.541-.34 1.826.076.06.383-.03.569-.239.12-.12.078-.42.479-1.378.404-.959.764-2.156 1.039-2.066s.049.703-.051.943c-.464 1.078-1.268 2.844-.89 2.71.374-.135.569-.135.943-.569.374-.434.345-1.152.599-1.137.24.014.21.254.15.418.24-.27 1.152-.868 1.363-.284.254.688-1.304 1.692-.914 1.632.375-.045.988-.434 1.258-.793l.719-6.5s-.734.6-5.361.6-5.284-.584-5.284-.584l.613 5.93c.33-.928 1.108-2.814 2.322-2.74.554.03 1.303 1.109.658 1.139-.27.015-.3-.539-.614-.614-.239-.046-.554.135-.763.345-.404.404-1.304 2.006-1.184 2.801.15 1.018 1.407-.346 1.617-.75.149-.283.254-1.138.568-1.048.33.09-.029.974-.27 1.737-.27.869-.404 1.781-.732 1.676-.33-.104.209-1.227.178-1.422-.313.299-.883 1.02-1.631.659l.374 3.699s1.019.793 4.073.793 4.118-.793 4.118-.793l.479-4.283c-.389.39-1.617 1.063-1.692.3-.059-.614 1.333-1.498.974-1.514l.06-.069zM17.346.669l-2.659 2.8-.486 1.901c1.881.12 3.189.386 3.189.694 0 .419-2.414.757-5.391.757s-5.39-.343-5.39-.763c0-.419 2.414-.764 5.391-.764.423 0 .844 0 1.264.016l.561-2.276L16.65.039c.068-.09.28-.015.474.15.194.149.299.344.239.434v.03l-.017.016zm-3.834 5.795s-.523 0-.61-.08c-.022-.025-.036-.058-.036-.09 0-.058.039-.091.09-.11l.044.075c-.021.006-.029.015-.033.023 0 .041.314.069.555.066.239-.003.531-.023.533-.064 0-.012-.023-.023-.061-.033l.045-.072c.063.02.117.058.117.121 0 .11-.141.128-.23.141-.107.015-.412.023-.412.023h-.002z",
+      'M15.156 19.432l.636-1.084s-1.444.591-3.86.591c-2.418 0-3.84-.568-3.84-.568l.711 1.183.252 3.729c0 .403 1.314.718 2.936.718 1.623 0 2.938-.314 2.938-.718l.229-3.835v-.016zm.615-7.046c-.769.046-1.153.903-1.539 1.805-.143.33-.63 1.737-.948 1.563-.318-.173.413-1.329.619-2.017-.237.174-1.105.849-1.329.215-.358.314-1.129.48-1.042-.329-.191.345-.621.823-1.139.614-.673-.255.395-2.411.66-2.307.266.121-.053.6-.136.794-.186.419-.398.958-.255 1.063.24.194.904-.703.919-.719.124-.165.479-1.229.763-1.107.285.134-.711 1.541-.34 1.826.076.06.383-.03.569-.239.12-.12.078-.42.479-1.378.404-.959.764-2.156 1.039-2.066s.049.703-.051.943c-.464 1.078-1.268 2.844-.89 2.71.374-.135.569-.135.943-.569.374-.434.345-1.152.599-1.137.24.014.21.254.15.418.24-.27 1.152-.868 1.363-.284.254.688-1.304 1.692-.914 1.632.375-.045.988-.434 1.258-.793l.719-6.5s-.734.6-5.361.6-5.284-.584-5.284-.584l.613 5.93c.33-.928 1.108-2.814 2.322-2.74.554.03 1.303 1.109.658 1.139-.27.015-.3-.539-.614-.614-.239-.046-.554.135-.763.345-.404.404-1.304 2.006-1.184 2.801.15 1.018 1.407-.346 1.617-.75.149-.283.254-1.138.568-1.048.33.09-.029.974-.27 1.737-.27.869-.404 1.781-.732 1.676-.33-.104.209-1.227.178-1.422-.313.299-.883 1.02-1.631.659l.374 3.699s1.019.793 4.073.793 4.118-.793 4.118-.793l.479-4.283c-.389.39-1.617 1.063-1.692.3-.059-.614 1.333-1.498.974-1.514l.06-.069zM17.346.669l-2.659 2.8-.486 1.901c1.881.12 3.189.386 3.189.694 0 .419-2.414.757-5.391.757s-5.39-.343-5.39-.763c0-.419 2.414-.764 5.391-.764.423 0 .844 0 1.264.016l.561-2.276L16.65.039c.068-.09.28-.015.474.15.194.149.299.344.239.434v.03l-.017.016zm-3.834 5.795s-.523 0-.61-.08c-.022-.025-.036-.058-.036-.09 0-.058.039-.091.09-.11l.044.075c-.021.006-.029.015-.033.023 0 .041.314.069.555.066.239-.003.531-.023.533-.064 0-.012-.023-.023-.061-.033l.045-.072c.063.02.117.058.117.121 0 .11-.141.128-.23.141-.107.015-.412.023-.412.023h-.002z',
   },
   {
-    title: "HTML5 icon",
-    ariaLabeledBy: "simpleicons-html5-icon",
-    url: "#projects",
-    colour: "#E34F26",
+    title: 'HTML5 icon',
+    ariaLabeledBy: 'simpleicons-html5-icon',
+    url: '#projects',
+    colour: '#E34F26',
     svgPath1:
-      "M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z",
+      'M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z',
   },
   {
-    title: "Git icon",
-    ariaLabeledBy: "simpleicons-git-icon",
-    url: "#experience",
-    colour: "#F14E32",
+    title: 'Git icon',
+    ariaLabeledBy: 'simpleicons-git-icon',
+    url: '#experience',
+    colour: '#F14E32',
     svgPath1:
-      "M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187",
+      'M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187',
   },
   {
-    title: "Git icon",
-    ariaLabeledBy: "simpleicons-git-icon",
-    url: "#contact",
-    colour: "#F14E32",
+    title: 'Git icon',
+    ariaLabeledBy: 'simpleicons-git-icon',
+    url: '#contact',
+    colour: '#F14E32',
     svgPath1:
-      "M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187",
+      'M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187',
   },
   {
-    title: "Git icon",
-    ariaLabeledBy: "simpleicons-git-icon",
-    url: "#feedback",
-    colour: "#F14E32",
+    title: 'Git icon',
+    ariaLabeledBy: 'simpleicons-git-icon',
+    url: '#feedback',
+    colour: '#F14E32',
     svgPath1:
-      "M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187",
+      'M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187',
   },
   // {
   //   title: "JavaScript icon",
@@ -149,7 +149,7 @@ const listItems = [
 ];
 
 const theContactSection = `<div class="contact">
-<section class="contact-layout" id="contact">
+<section class="layout" id="contact">
     <div class="wrapper animate-left-fast">
         <h2>Get in touch</h2>
         <form id="contactForm">
@@ -218,7 +218,7 @@ const theContactSection = `<div class="contact">
         </div>
     </div>
 </section>
-</div>`
+</div>`;
 
 const theFeedbackSection = `
 <div class="feedback">
@@ -308,40 +308,42 @@ const theFeedbackSection = `
     </div>
 </section>
 </div>
-`
+`;
 
 //set the menu position
 menuComp.menuLink = listItems;
-menuComp.style.zIndex = "1000";
-menuComp.style.animation = "moveInBottomMenu 1.6s ease-out .75s";
+menuComp.style.zIndex = '1000';
+menuComp.style.animation = 'moveInBottomMenu 1.6s ease-out .75s';
 if (window.screen.availWidth > 500) {
-  menuComp.style.top = "40px";
-  menuComp.style.left = "40px";
+  menuComp.style.top = '40px';
+  menuComp.style.left = '40px';
 } else {
-  menuComp.style.top = "10px";
-  menuComp.style.left = "18px";
+  menuComp.style.top = '10px';
+  menuComp.style.left = '18px';
 }
 
-const tileFinderEl = document.querySelector("ws-hex-menu");
-tileFinderEl.addEventListener("wsTileSelected", (event) => {
+const tileFinderEl = document.querySelector('ws-hex-menu');
+tileFinderEl.addEventListener('wsTileSelected', (event) => {
   const selected = document.querySelector(`.${event.detail.substring(1)}`);
   console.log(selected);
   setSectionColours(event.detail.substring(1));
   // selected !== null ?  content.innerHTML = selected.innerHTML : setTheContactSection();
-  selected !== null ?  content.innerHTML = selected.innerHTML : setTheRightForm(event.detail.substring(1));
+  selected !== null
+    ? (content.innerHTML = selected.innerHTML)
+    : setTheRightForm(event.detail.substring(1));
 });
 
 const setTheRightForm = (selected) => {
-  if(selected === 'contact'){
+  if (selected === 'contact') {
     return setTheContactSection();
   }
-  if(selected === 'feedback'){
+  if (selected === 'feedback') {
     return setTheFeedbackSection();
   }
-}
+};
 
-let content = document.querySelector(".content");
-content.innerHTML = document.querySelector(".home").innerHTML;
+let content = document.querySelector('.content');
+content.innerHTML = document.querySelector('.home').innerHTML;
 
 const changeLogo = (oldColour, newColour) => {
   let root = document.documentElement;
@@ -351,51 +353,51 @@ const changeLogo = (oldColour, newColour) => {
 const setSectionColours = (section) => {
   console.log(section);
   switch (section) {
-    case "about":
-      changeLogo("--color-gen-2", "#ff3366");
-      changeLogo("--color-gen-4", "rgb(240, 235, 244)");
+    case 'about':
+      changeLogo('--color-gen-2', '#ff3366');
+      changeLogo('--color-gen-4', 'rgb(240, 235, 244)');
       break;
-    case "home":
-      changeLogo("--color-gen-2", "#f172a1");
-      changeLogo("--color-gen-4", "rgb(240, 235, 244)");
+    case 'home':
+      changeLogo('--color-gen-2', '#f172a1');
+      changeLogo('--color-gen-4', 'rgb(240, 235, 244)');
       break;
-    case "projects":
-      changeLogo("--color-gen-2", "#e64398");
-      changeLogo("--color-gen-4", "rgb(240, 235, 244)");
+    case 'projects':
+      changeLogo('--color-gen-2', '#e64398');
+      changeLogo('--color-gen-4', 'rgb(240, 235, 244)');
       break;
-    case "experience":
-      changeLogo("--color-gen-2", "#a1c3d1");
-      changeLogo("--color-gen-4", "rgb(240, 235, 244)");
+    case 'experience':
+      changeLogo('--color-gen-2', '#a1c3d1');
+      changeLogo('--color-gen-4', 'rgb(240, 235, 244)');
       break;
-    case "contact":
-      changeLogo("--color-gen-2", "#cccccc");
-      changeLogo("--color-gen-4", "rgb(240, 235, 244)");
+    case 'contact':
+      changeLogo('--color-gen-2', '#cccccc');
+      changeLogo('--color-gen-4', 'rgb(240, 235, 244)');
       break;
-    case "feedback":
-      changeLogo("--color-gen-2", "#cb2d6f");
-      changeLogo("--color-gen-4", "#cccccc");
+    case 'feedback':
+      changeLogo('--color-gen-2', '#cb2d6f');
+      changeLogo('--color-gen-4', '#cccccc');
       break;
     default:
-      changeLogo("--color-gen-1", "#f172a1;");
-      changeLogo("--color-gen-4", "rgb(240, 235, 244)");
+      changeLogo('--color-gen-1', '#f172a1;');
+      changeLogo('--color-gen-4', 'rgb(240, 235, 244)');
   }
 };
 
 const setTheContactSection = () => {
-  const content = document.getElementById("content");
-      content.innerHTML = theContactSection;
-      submitTheContactMessage();
-}
+  const content = document.getElementById('content');
+  content.innerHTML = theContactSection;
+  submitTheContactMessage();
+};
 
 function submitTheContactMessage() {
   const contactForm = document.querySelector('#contactForm');
-  const contactName = document.querySelector("#name");
-  const contactEmail = document.querySelector("#email");
-  const contactMessage = document.querySelector("#message");
+  const contactName = document.querySelector('#name');
+  const contactEmail = document.querySelector('#email');
+  const contactMessage = document.querySelector('#message');
 
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    toggleAni('.contact-button-wrapper', true);  
+    toggleAni('.contact-button-wrapper', true);
 
     if (contactName.value && contactEmail.value && contactMessage.value) {
       const item = {
@@ -404,16 +406,20 @@ function submitTheContactMessage() {
         message: contactMessage.value,
       };
 
-      sendHttpRequest('POST', 'https://firestore-api-server.herokuapp.com/api/contact', item).then((res) => {
-        if(res.status === 200){
+      sendHttpRequest(
+        'POST',
+        'https://firestore-api-server.herokuapp.com/api/contact',
+        item,
+      ).then((res) => {
+        if (res.status === 200) {
           toggleAni('.contact-button-wrapper', false);
           sendButtonFunctionality();
           contactName.value = '';
           contactEmail.value = '';
           contactMessage.value = '';
-          disableButton('#contact-submit', true)
+          disableButton('#contact-submit', true);
         }
-      }) 
+      });
     }
   });
 }
@@ -422,68 +428,70 @@ const setTheFeedbackSection = () => {
   const content = document.getElementById('content');
   content.innerHTML = theFeedbackSection;
   submitTheFeedbackMessage();
-}
+};
 
-function submitTheFeedbackMessage(){
+function submitTheFeedbackMessage() {
   const feedbackForm = document.querySelector('#feedbackForm');
-  const bad = document.querySelector("#bad");
-  const meh = document.querySelector("#meh");
-  const ok = document.querySelector("#ok");
-  const feedbackMessage = document.querySelector('#commentMessage')
+  const bad = document.querySelector('#bad');
+  const meh = document.querySelector('#meh');
+  const ok = document.querySelector('#ok');
+  const feedbackMessage = document.querySelector('#commentMessage');
 
-  feedbackForm.addEventListener('submit', (e)=>{
+  feedbackForm.addEventListener('submit', (e) => {
     e.preventDefault();
     toggleAni('.contact-button-wrapper', true);
-  
-    if(ok.checked || meh.checked || bad.checked){
-      console.log(bad, meh, ok)
+
+    if (ok.checked || meh.checked || bad.checked) {
+      console.log(bad, meh, ok);
       const item = {
         ok: ok.checked,
         meh: meh.checked,
         bad: bad.checked,
         message: feedbackMessage.value,
-      }
-      sendHttpRequest('POST', 'https://firestore-api-server.herokuapp.com/api/feedback', item).then((res) => {
-        if(res.status === 200){
+      };
+      sendHttpRequest(
+        'POST',
+        'https://firestore-api-server.herokuapp.com/api/feedback',
+        item,
+      ).then((res) => {
+        if (res.status === 200) {
           toggleAni('.contact-button-wrapper', false);
           sendButtonFunctionality();
           feedbackMessage.value = '';
           disableButton('#feedback-submit', true);
         }
       });
-    };
+    }
   });
 }
 
-
-
-const sendHttpRequest = async function(method, url, data) {
+const sendHttpRequest = async function (method, url, data) {
   const res = await fetch(url, {
     method: method,
     body: JSON.stringify(data),
     headers: {
-      'Content-Type': 'application/json'
-    }
-  })
+      'Content-Type': 'application/json',
+    },
+  });
   return res;
-}
+};
 
 const toggleAni = (el, trueOrFalse) => {
-  const t = document.querySelector(el)
-    t.removeAttribute("clicked")
-    if(trueOrFalse === true){
-      t.setAttribute("clicked", trueOrFalse)
-    }
+  const t = document.querySelector(el);
+  t.removeAttribute('clicked');
+  if (trueOrFalse === true) {
+    t.setAttribute('clicked', trueOrFalse);
   }
+};
 
-const disableButton = (id, trueFalse)=>{
-  const button = document.querySelector(id)
-  button.addEventListener('click', ()=> {
+const disableButton = (id, trueFalse) => {
+  const button = document.querySelector(id);
+  button.addEventListener('click', () => {
     button.disabled = trueFalse;
-  })
-}
+  });
+};
 
-const sendButtonFunctionality = ()=>{
+const sendButtonFunctionality = () => {
   const plane = document.querySelector('.plane-send');
   plane.style.display = 'none';
   const success = document.querySelector('.success');
@@ -497,4 +505,4 @@ const sendButtonFunctionality = ()=>{
   contactButton.style.color = 'var(--color-green)';
   const thanksMessage = document.querySelector('.thanks-message');
   thanksMessage.style.display = 'block';
-}
+};

@@ -74,6 +74,7 @@ body {
   background-color: var(--color-chalk);
   background-size: cover;
   position: relative;
+  min-height: 92.5vh;
 }
 
 .intro-box {
@@ -365,9 +366,11 @@ body {
 
 .profile-pic {
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-  top: 0%;
-  left: 8%;
+  /* top: 0%;
+  left: 8%; */
   width: 100%;
+  max-height: 200px;
+  max-width: 200px;
 }
 
 .projects-filter {
@@ -398,6 +401,8 @@ body {
   float: left;
   padding-right: 1rem;
   padding-bottom: 0.3rem;
+  max-height: 200px;
+  max-width: 200px;
 }
 
 .projects-container {
@@ -407,6 +412,8 @@ body {
   padding: 0;
   margin: 0;
   list-style: none;
+  align-items: center;
+  padding-top: 20px;
 }
 
 .projects-item {
@@ -433,6 +440,8 @@ body {
   float: left;
   padding-right: 1rem;
   padding-bottom: 0.3rem;
+  max-height: 200px;
+  max-width: 200px;
 }
 
 .projects-pic {
@@ -442,8 +451,8 @@ body {
 }
 .projects-item:nth-of-type(2n) {
   position: relative;
-  left: 7.5%;
-  width: calc(100% - 7.25rem);
+  left: 5%;
+  /* width: calc(100% - 9rem); */
 }
 
 .projects-item:last-child {
@@ -514,7 +523,7 @@ h3 {
     drop-shadow(1px -1px 0px var(--color-purple))
     contrast(70%);
   shape-outside: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-  width: 75%;
+  /* width: 75%; */
   height: auto;
   margin: 0 auto;
   padding: 15px;
@@ -551,7 +560,7 @@ h3 {
 .cards__item {
   display: flex;
   padding: 1rem;
-  margin-bottom: 22vh;
+  /* margin-bottom: 22vh; */
 }
 
 .card {
@@ -788,7 +797,8 @@ button, input[type="submit"], input[type="reset"] {
 
 @media only screen and (max-width: 1050px) {
   .contact-layout {
-    height: 140vh;
+    /* height: 140vh; */
+    min-height: 92.5vh;
     background-color: var(--color-chalk);
     background-size: cover;
     position: relative;
@@ -854,7 +864,9 @@ button, input[type="submit"], input[type="reset"] {
   }
 
   .profile-pic {
-    width: 100%;
+    /* width: 100%; */
+    max-height: 200px;
+    max-width: 200px;
     float: left;
   }
 
@@ -873,7 +885,8 @@ button, input[type="submit"], input[type="reset"] {
   }
 
   .contact-layout {
-    height: 150vh;
+    /* height: 150vh; */
+    min-height: 92.5vh;
     background-color: var(--color-chalk);
     background-size: cover;
     position: relative;
@@ -900,11 +913,13 @@ button, input[type="submit"], input[type="reset"] {
   
   .projects-item {
     align-content: space-around;
-    width: 100%;
+    /* width: 100%; */
   }
   .projects-image {
     flex: 0 0 50%;
     margin: 0 auto;
+    max-width: 200px;
+    max-width: 200px;
   }
 
   .projects-detail {
@@ -916,12 +931,13 @@ button, input[type="submit"], input[type="reset"] {
   .projects-item:nth-of-type(2n) {
     position: relative;
     left: 0;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .projects-item:last-child {
-  margin-bottom: 35vh;
+  /* margin-bottom: 35vh; */
 }
+
 }
 
 .wrapper {
