@@ -64,7 +64,7 @@ body {
 }
 
 .layout {
-  height: 92.5vh;
+  height: 95vh;
   background-color: var(--color-chalk);
   background-size: cover;
   position: relative;
@@ -74,7 +74,7 @@ body {
   background-color: var(--color-chalk);
   background-size: cover;
   position: relative;
-  min-height: 92.5vh;
+  min-height: 95vh;
 }
 
 .intro-box {
@@ -613,7 +613,7 @@ h3 {
 }
 
 .contact-layout {
-  height: 92.5vh;
+  height: 95vh;
   background-color: var(--color-chalk);
   background-size: cover;
   position: relative;
@@ -798,7 +798,7 @@ button, input[type="submit"], input[type="reset"] {
 @media only screen and (max-width: 1050px) {
   .contact-layout {
     /* height: 140vh; */
-    min-height: 92.5vh;
+    min-height: 95vh;
     background-color: var(--color-chalk);
     background-size: cover;
     position: relative;
@@ -886,7 +886,7 @@ button, input[type="submit"], input[type="reset"] {
 
   .contact-layout {
     /* height: 150vh; */
-    min-height: 92.5vh;
+    min-height: 95vh;
     background-color: var(--color-chalk);
     background-size: cover;
     position: relative;
