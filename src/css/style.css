@@ -10,7 +10,9 @@
   --color-pink: #f172a1;
   --color-dark-pink: #e64398;
   --color-menu: #f172a1;
-  --color-cream: #F9F6F0;
+  --color-cream: #f9f6f0;
+  --color-blue: #3776ab;
+  --color-purple-blue: #5d4f85;
 
   --color-burgundy: #501f3a;
   --color-pink-dark-2: #cb2d6f;
@@ -18,7 +20,8 @@
   --color-green: #14a098;
   --color-light-green: #5ca9a5;
   --color-black: #0f292f;
-  --color-light-black: #777
+  --color-light-black: #777;
+  --svg-size: 100%;
 
   --line: 1px solid var(--color-grey);
 
@@ -43,7 +46,6 @@
   --base-line-height: 25px;
 
   --transition-fast: 0.1s;
-  
 }
 
 *,
@@ -55,7 +57,7 @@
 }
 
 body {
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Roboto Mono', monospace;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.2;
@@ -107,8 +109,8 @@ body {
 }
 
 .heading-primary-sub::before {
-  content: "<p>";
-  font-family: "La Belle Aurore", cursive;
+  content: '<p>';
+  font-family: 'La Belle Aurore', cursive;
   color: var(--color-green);
   font-size: 18px;
   position: absolute;
@@ -117,8 +119,8 @@ body {
 }
 
 .heading-primary-sub::after {
-  content: "<p/>";
-  font-family: "La Belle Aurore", cursive;
+  content: '<p/>';
+  font-family: 'La Belle Aurore', cursive;
   color: var(--color-green);
   font-size: 18px;
   position: absolute;
@@ -421,7 +423,7 @@ body {
   text-align: center;
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: -2%
+  margin-bottom: -2%;
 }
 
 .projects-image {
@@ -520,8 +522,7 @@ h3 {
     drop-shadow(1px 1px 0px var(--color-purple))
     drop-shadow(-1px -1px 0px var(--color-purple))
     drop-shadow(-1px 1px 0px var(--color-purple))
-    drop-shadow(1px -1px 0px var(--color-purple))
-    contrast(70%);
+    drop-shadow(1px -1px 0px var(--color-purple)) contrast(70%);
   shape-outside: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   /* width: 75%; */
   height: auto;
@@ -570,7 +571,6 @@ h3 {
   overflow: hidden;
 }
 
-
 .card:hover .tran {
   filter: contrast(100%);
   cursor: pointer;
@@ -595,7 +595,7 @@ h3 {
   text-align: center;
 }
 .card__image::before {
-  content: "";
+  content: '';
   display: block;
 }
 
@@ -677,8 +677,9 @@ h3 {
   transform-origin: center;
 }
 
-.hexagon:before, .hexagon:after {
-  content: "";
+.hexagon:before,
+.hexagon:after {
+  content: '';
   background: currentcolor;
   display: block;
   position: absolute;
@@ -703,7 +704,7 @@ h3 {
 .contact-button-wrapper svg {
   color: var(--color-light-black);
   fill: currentcolor;
-  transition: all .4s;
+  transition: all 0.4s;
 }
 .contact-button-wrapper[clicked] svg {
   color: var(--color-dark-pink);
@@ -734,13 +735,15 @@ h3 {
   }
 }
 
-button, input[type="submit"], input[type="reset"] {
-	background: none;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+button,
+input[type='submit'],
+input[type='reset'] {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
 .plane-send {
@@ -775,7 +778,6 @@ button, input[type="submit"], input[type="reset"] {
   line-height: 1.5;
 }
 
-
 /**896px min****/
 @media (min-width: 60rem) {
   .cards__item {
@@ -806,12 +808,11 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 @media only screen and (max-width: 600px) {
-
   .build-statement {
     bottom: -15%;
     width: 85%;
   }
-  
+
   .projects-heading {
     padding-top: 25%;
     margin-bottom: 6vh;
@@ -910,7 +911,6 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 @media only screen and (max-width: 1100px) {
-  
   .projects-item {
     align-content: space-around;
     /* width: 100%; */
@@ -932,12 +932,11 @@ button, input[type="submit"], input[type="reset"] {
     position: relative;
     left: 0;
     /* width: 100%; */
-}
+  }
 
-.projects-item:last-child {
-  /* margin-bottom: 35vh; */
-}
-
+  .projects-item:last-child {
+    /* margin-bottom: 35vh; */
+  }
 }
 
 .wrapper {
@@ -984,8 +983,8 @@ button {
   display: block;
   margin: 2rem 0 0.5rem 0;
 }
-.form-group input[type="text"],
-.form-group input[type="email"],
+.form-group input[type='text'],
+.form-group input[type='email'],
 .form-group textarea {
   width: 100%;
   padding: 1rem 0.8rem;
@@ -993,8 +992,8 @@ button {
   transition: border 0.15s;
   border: 2px solid var(--color-grey-2);
 }
-.form-group input[type="text"],
-.form-group input[type="email"] {
+.form-group input[type='text'],
+.form-group input[type='email'] {
   height: 4.6rem;
 }
 .form-group textarea {
@@ -1017,8 +1016,8 @@ i {
 .contact-submit:hover {
   background: var(--color-light-green);
 }
-.form-group input[type="text"]:focus,
-.form-group input[type="email"]:focus,
+.form-group input[type='text']:focus,
+.form-group input[type='email']:focus,
 .form-group textarea:focus {
   border: 1px solid #222;
 }
@@ -1032,10 +1031,10 @@ i {
   font-size: 1.2rem;
   cursor: pointer;
   position: relative;
-  padding-left: 4.5rem; }
+  padding-left: 4.5rem;
+}
 
 .form__radio-button {
-  
   overflow: hidden;
   height: 2rem;
   width: 2rem;
@@ -1044,25 +1043,28 @@ i {
   display: inline-block;
   position: absolute;
   left: 0;
-  top: -.4rem; }
-  
-  .form__radio-button::after {
-    content: "";
-    display: block;
-    height: 1rem;
-    width: 1rem;
-    border: 5px solid var(--color-menu);
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--color-menu);
-    opacity: 0;
-    transition: opacity .2s; }
+  top: -0.4rem;
+}
+
+.form__radio-button::after {
+  content: '';
+  display: block;
+  height: 1rem;
+  width: 1rem;
+  border: 5px solid var(--color-menu);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-menu);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
 
 .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
-  opacity: 1; }
+  opacity: 1;
+}
 
 .feedback-text {
   padding-top: 5%;
