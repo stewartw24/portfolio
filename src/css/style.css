@@ -63,6 +63,7 @@ body {
   line-height: 1.2;
   color: var(--color-light-black);
   padding: 30px;
+  height: 100vh;
 }
 
 .layout {
@@ -70,13 +71,15 @@ body {
   background-color: var(--color-chalk);
   background-size: cover;
   position: relative;
+  overflow: auto;
 }
 
 .ext-layout {
   background-color: var(--color-chalk);
   background-size: cover;
   position: relative;
-  min-height: 95vh;
+  height: 95vh;
+  overflow: auto;
 }
 
 .intro-box {
@@ -280,8 +283,8 @@ body {
 }
 
 .logo {
-  position: absolute;
-  bottom: 1%;
+  position: fixed;
+  bottom: 2%;
   right: 5%;
   height: 148px;
   width: 235px;
@@ -361,15 +364,13 @@ body {
   position: relative;
   top: 10%;
   margin: auto;
-  width: 65%;
+  width: 63%;
   padding: 10px;
   top: 20%;
 }
 
 .profile-pic {
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-  /* top: 0%;
-  left: 8%; */
   width: 100%;
   max-height: 200px;
   max-width: 200px;
@@ -408,6 +409,7 @@ body {
 }
 
 .projects-container {
+  overflow: auto;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -454,7 +456,6 @@ body {
 .projects-item:nth-of-type(2n) {
   position: relative;
   left: 5%;
-  /* width: calc(100% - 9rem); */
 }
 
 .projects-item:last-child {
@@ -495,7 +496,7 @@ body {
 }
 
 .p-margin-left-small {
-  margin-left: 12%;
+  margin-left: 8%;
 }
 
 h3 {
@@ -524,7 +525,6 @@ h3 {
     drop-shadow(-1px 1px 0px var(--color-purple))
     drop-shadow(1px -1px 0px var(--color-purple)) contrast(70%);
   shape-outside: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-  /* width: 75%; */
   height: auto;
   margin: 0 auto;
   padding: 15px;
@@ -557,11 +557,12 @@ h3 {
   margin: 0;
   padding: 0;
   justify-content: center;
+  max-height: 70vh;
+  overflow: auto;
 }
 .cards__item {
   display: flex;
   padding: 1rem;
-  /* margin-bottom: 22vh; */
 }
 
 .card {
@@ -799,7 +800,6 @@ input[type='reset'] {
 
 @media only screen and (max-width: 1050px) {
   .contact-layout {
-    /* height: 140vh; */
     min-height: 95vh;
     background-color: var(--color-chalk);
     background-size: cover;
@@ -808,28 +808,49 @@ input[type='reset'] {
 }
 
 @media only screen and (max-width: 600px) {
+  .pad-left {
+    padding-left: 5%;
+  }
+
   .build-statement {
-    bottom: -15%;
+    bottom: -12%;
     width: 85%;
   }
 
   .projects-heading {
-    padding-top: 25%;
-    margin-bottom: 6vh;
+    padding-top: 20%;
+    margin-bottom: 3vh;
+  }
+
+  .projects-container {
+    padding-bottom: 0;
+  }
+
+  .cards {
+    overflow: initial;
   }
 
   .exp-heading {
     padding-top: 25%;
     margin-bottom: 2%;
   }
+
   .cards__item {
     margin-bottom: 5vh;
   }
+
+  .card__text {
+    max-width: 63%;
+    margin: auto;
+  }
+
   .cards__item:last-child {
     margin-bottom: 32vh;
   }
+
   .logo {
-    width: 40%;
+    width: 25%;
+    height: 15%;
   }
 
   .arrowBg {
@@ -844,11 +865,12 @@ input[type='reset'] {
     padding: 0;
     width: 95%;
     top: 12%;
+    padding-left: 2%;
   }
 
   .intro-box {
     left: 20%;
-    top: 20%;
+    top: 12%;
   }
 
   *::before {
@@ -865,7 +887,6 @@ input[type='reset'] {
   }
 
   .profile-pic {
-    /* width: 100%; */
     max-height: 200px;
     max-width: 200px;
     float: left;
@@ -873,7 +894,6 @@ input[type='reset'] {
 
   .about-text {
     font-size: 0.875rem;
-    /* font-weight: 600; */
   }
 
   .about-section {
@@ -885,8 +905,11 @@ input[type='reset'] {
     margin-bottom: 0;
   }
 
+  .ext-layout {
+    height: 100vh;
+  }
+
   .contact-layout {
-    /* height: 150vh; */
     min-height: 95vh;
     background-color: var(--color-chalk);
     background-size: cover;
@@ -908,12 +931,32 @@ input[type='reset'] {
   .hex-clip {
     width: 28%;
   }
+
+  .experience-image {
+    width: 45%;
+  }
+  .form-group input[type='text'],
+  .form-group input[type='email'] {
+    height: 40px;
+  }
+  .form-group textarea {
+    height: 80px;
+  }
+
+  .contact-button-wrapper {
+    width: 50px;
+    height: 50px;
+  }
+
+  .plane-send {
+    height: 35px;
+  }
 }
 
 @media only screen and (max-width: 1100px) {
   .projects-item {
     align-content: space-around;
-    /* width: 100%; */
+    max-width: 63%;
   }
   .projects-image {
     flex: 0 0 50%;
@@ -931,11 +974,6 @@ input[type='reset'] {
   .projects-item:nth-of-type(2n) {
     position: relative;
     left: 0;
-    /* width: 100%; */
-  }
-
-  .projects-item:last-child {
-    /* margin-bottom: 35vh; */
   }
 }
 
@@ -964,6 +1002,8 @@ input[type='reset'] {
 @media screen and (min-width: 992px) {
   .wrapper {
     width: 45%;
+    max-height: 73vh;
+    overflow: auto;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -981,7 +1021,7 @@ button {
 }
 .form-group label {
   display: block;
-  margin: 2rem 0 0.5rem 0;
+  margin: 1rem 0 0.25rem 0;
 }
 .form-group input[type='text'],
 .form-group input[type='email'],
@@ -991,10 +1031,6 @@ button {
   outline: 0;
   transition: border 0.15s;
   border: 2px solid var(--color-grey-2);
-}
-.form-group input[type='text'],
-.form-group input[type='email'] {
-  height: 4.6rem;
 }
 .form-group textarea {
   resize: vertical;
