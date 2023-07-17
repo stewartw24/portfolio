@@ -68,171 +68,10 @@ const listItems = [
   },
 ];
 
-const theContactSection = `<div class="contact">
-<section class="layout" id="contact">
-    <div class="wrapper animate-left-fast">
-        <h2>Get in touch</h2>
-        <form id="contactForm">
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" name="Name" id="name" placeholder="First and Last" required minlength="3" maxlength="25" />
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" name="Email" id="email" placeholder="email@domain.tld" required />
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea name="Message" id="message" rows="5" placeholder="Type your message here...."></textarea>
-          </div>
-          <div class="form-group">
-          <div class="beside">
-          <button id="contact-submit">
-            <div class=contact-button-wrapper>
-              <div class="hexagon-container">
-              <div class="hexagon-border hexagon"></div>
-              <div class="hexagon-background hexagon"></div>
-            </div>
-            <div class="icon-container">
-              <svg class="plane-send" viewBox="0 0 512.005 512.005" width="50px">
-                <path class="plane-send" d="M511.658 51.675c2.496-11.619-8.895-21.416-20.007-17.176l-482 184a15 15 0 00-.054 28.006L145 298.8v164.713a15 15 0 0028.396 6.75l56.001-111.128 136.664 101.423c8.313 6.17 20.262 2.246 23.287-7.669C516.947 34.532 511.431 52.726 511.658 51.675zm-118.981 52.718L157.874 271.612 56.846 232.594zM175 296.245l204.668-145.757c-176.114 185.79-166.916 176.011-167.684 177.045-1.141 1.535 1.985-4.448-36.984 72.882zm191.858 127.546l-120.296-89.276 217.511-229.462z"></path>
-              </svg>
-              <svg class="success" viewBox="0 0 512.005 512.005" width="60px">
-              
-              <path d="m395.621094 185.636719-161.011719 153.902343-87.804687-87.679687c-4.855469-4.855469-12.726563-4.855469-17.585938 0-4.855469 4.859375-4.855469 12.730469 0 17.589844l96.410156 96.410156c2.339844 2.351563 5.535156 3.65625 8.855469 3.613281 3.21875.03125 6.316406-1.226562 8.605469-3.492187l169.742187-162.257813c4.921875-4.769531 5.082031-12.613281.363281-17.578125-4.726562-4.960937-12.566406-5.1875-17.574218-.507812zm0 0"/>
-              </svg>
-            </div>
-          </div>
-          </button>
-          <div class="thanks-message"> Thanks for reaching out!</div>
-          </div>
-          </div>
-        </form>
-      </div>
-    <div class="logo fade-in">
-        <div class="pos-1">
-            <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
-                <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
-            </svg>
-        </div>
-        <div class="pos-2">
-            <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
-                <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
-            </svg>
-        </div>
-        <div class="pos-3">
-            <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
-                <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
-            </svg>
-        </div>
-        <div class="pos-4">
-            <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
-                <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
-            </svg>
-        </div>
-        <div class="pos-5">
-            <svg version="1.1" viewBox="0 0 600 516.8">
-                <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
-            </svg>
-        </div>
-    </div>
-</section>
-</div>`;
-
-const theFeedbackSection = `
-<div class="feedback">
-<section class="layout" id="feedback">
-    <div class="wrapper animate-right">
-        <h2>Feedback</h2>
-        <form id="feedbackForm">
-            <h3 class="feedback-text">Rate this site</h3>
-            <div class="form__group u-margin-bottom-medium">
-                <div class="form__radio-group">
-                    <input type="radio" class="form__radio-input" id="bad" name="opinion">
-                    <label for="bad" class="form__radio-label">
-                        <span class="form__radio-button test"></span>
-                        <div>bad</div>
-                    </label>
-                </div>
-                <div class="form__radio-group">
-                    <input type="radio" class="form__radio-input" id="meh" name="opinion">
-                    <label for="meh" class="form__radio-label">
-                        <span class="form__radio-button test"></span>
-                        <div>meh</div>
-                    </label>
-                </div>
-                <div class="form__radio-group">
-                    <input type="radio" class="form__radio-input" id="ok" name="opinion">
-                    <label for="ok" class="form__radio-label">
-                        <span class="form__radio-button"></span>
-                        <div class="form-padding">ok</div>
-                    </label>
-                </div>
-            </div>
-          <div class="form-group">
-            <label for="comments">Comments (optional)</label>
-            <textarea name="Message" id="commentMessage" rows="2" placeholder="Type your comments here...."></textarea>
-          </div>
-          <div class="form-group">
-          <div class="beside">
-          <button id="feedback-submit">
-            <div class=contact-button-wrapper>
-              <div class="hexagon-container">
-              <div class="hexagon-border hexagon"></div>
-              <div class="hexagon-background hexagon"></div>
-            </div>
-            <div class="icon-container">
-              <svg class="plane-send" viewBox="0 0 512.005 512.005" width="50px">
-                <path class="plane-send" d="M511.658 51.675c2.496-11.619-8.895-21.416-20.007-17.176l-482 184a15 15 0 00-.054 28.006L145 298.8v164.713a15 15 0 0028.396 6.75l56.001-111.128 136.664 101.423c8.313 6.17 20.262 2.246 23.287-7.669C516.947 34.532 511.431 52.726 511.658 51.675zm-118.981 52.718L157.874 271.612 56.846 232.594zM175 296.245l204.668-145.757c-176.114 185.79-166.916 176.011-167.684 177.045-1.141 1.535 1.985-4.448-36.984 72.882zm191.858 127.546l-120.296-89.276 217.511-229.462z"></path>
-              </svg>
-              <svg class="success" viewBox="0 0 512.005 512.005" width="60px">
-              <path d="m395.621094 185.636719-161.011719 153.902343-87.804687-87.679687c-4.855469-4.855469-12.726563-4.855469-17.585938 0-4.855469 4.859375-4.855469 12.730469 0 17.589844l96.410156 96.410156c2.339844 2.351563 5.535156 3.65625 8.855469 3.613281 3.21875.03125 6.316406-1.226562 8.605469-3.492187l169.742187-162.257813c4.921875-4.769531 5.082031-12.613281.363281-17.578125-4.726562-4.960937-12.566406-5.1875-17.574218-.507812zm0 0"/>
-              </svg>
-            </div>
-          </div>
-          </button>
-          <div class="thanks-message"> Thanks for the feedback!</div>
-          </div>
-          </div>
-        </form>
-      </div>
-      <div class="build-statement animate-bottom">built with HTML, CSS, JavaScript, StencilJS, NodeJS, and Firebase. Hosted on Netlify and Heroku.</div>
-    <div class="logo fade-in">
-        <div class="pos-1">
-            <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
-                <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
-            </svg>
-        </div>
-        <div class="pos-2">
-            <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
-                <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
-            </svg>
-        </div>
-        <div class="pos-3">
-            <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
-                <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
-            </svg>
-        </div>
-        <div class="pos-4">
-            <svg version="1.1" viewBox="0 0 600 516.8" width="100%" height="100%" preserveAspectRatio="none">
-                <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
-            </svg>
-        </div>
-        <div class="pos-5">
-            <svg version="1.1" viewBox="0 0 600 516.8">
-                <polygon points="150.7,516.8 1.5,258.4 150.7,0 449,0 598.2,258.4 449,516.8 "/>
-            </svg>
-        </div>
-    </div>
-</section>
-</div>
-`;
-
 //set the menu position
 menuComp.menuLink = listItems;
 menuComp.style.zIndex = '1000';
 menuComp.style.animation = 'moveInBottomMenu 1.6s ease-out .75s';
-console.log(menuComp);
 if (window.screen.availWidth > 500) {
   menuComp.style.top = '40px';
   menuComp.style.left = '40px';
@@ -241,25 +80,25 @@ if (window.screen.availWidth > 500) {
   menuComp.style.left = '18px';
 }
 
+const homeTemplate = document.getElementById('home');
+
 const tileFinderEl = document.querySelector('ws-hex-menu');
 tileFinderEl.addEventListener('wsTileSelected', (event) => {
-  const selected = document.querySelector(`.${event.detail.substring(1)}`);
-  console.log(selected);
+  const selected = document.getElementById(`${event.detail.substring(1)}`);
+  const content = selected.content.cloneNode(true);
+  const container = document.getElementById('contentContainer');
+  container.innerHTML = '';
+  container.appendChild(content);
+  container.removeAttribute('hidden');
+  if (selected === 'home') {
+    contentContainer.setAttribute('hidden', true);
+  }
   setSectionColours(event.detail.substring(1));
-  // selected !== null ?  content.innerHTML = selected.innerHTML : setTheContactSection();
-  selected !== null
-    ? (content.innerHTML = selected.innerHTML)
-    : setTheRightForm(event.detail.substring(1));
 });
 
-const setTheRightForm = (selected) => {
-  if (selected === 'contact') {
-    return setTheContactSection();
-  }
-  if (selected === 'feedback') {
-    return setTheFeedbackSection();
-  }
-};
+const defaultContent = homeTemplate.content.cloneNode(true);
+const defaultContainer = document.getElementById('contentContainer');
+defaultContainer.appendChild(defaultContent);
 
 let content = document.querySelector('.content');
 content.innerHTML = document.querySelector('.home').innerHTML;
@@ -270,7 +109,6 @@ const changeLogo = (oldColour, newColour) => {
 };
 
 const setSectionColours = (section) => {
-  console.log(section);
   switch (section) {
     case 'about':
       changeLogo('--color-gen-2', '#ff3366');
@@ -361,7 +199,6 @@ function submitTheFeedbackMessage() {
     toggleAni('.contact-button-wrapper', true);
 
     if (ok.checked || meh.checked || bad.checked) {
-      console.log(bad, meh, ok);
       const item = {
         ok: ok.checked,
         meh: meh.checked,
