@@ -12,11 +12,23 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@300&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@300&display=swap" media="print" onload="this.onload=null;this.media='all'">
 
     <link rel="stylesheet" href="src/css/style.css">
     <script type="module" src="src/js/index.js"></script>
-    <script type='module' src='https://unpkg.com/ws-menu-components@1.0.6/dist/menu-components/menu-components.esm.js'></script>
+    <script type='module' src='https://unpkg.com/ws-menu-components@1.0.7/dist/menu-components/menu-components.esm.js'></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function() {
+            navigator.serviceWorker.register('src/js/service-worker.js').then(function(registration) {
+              console.log('Service Worker registered with scope:', registration.scope);
+            }).catch(function(error) {
+              console.log('Service Worker registration failed:', error);
+            });
+          });
+        }
+      </script>
     
 </head>
 <body>
@@ -81,10 +93,9 @@
                     </figure>
                     <div class="about-text animate-right">
                         <p>
-                            TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
-                        TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
-                        TEST TEST TEST TEST TEST
+                            As a front-end developer, I have acquired valuable experience in various technologies since I entered the tech industry in 2019. I was instantly drawn to the front end side of the tech stack. Throughout my professional journey, I have honed my skills in HTML, CSS, and JavaScript, enabling me to create visually appealing and interactive web experiences. Additionally, I gained exposure to Node.js, allowing me to build server-side applications. Web components have become a significant part of my skillset, enabling me to develop reusable and modular UI elements. I am also proficient in React, utilizing its component-based architecture to create scalable and efficient web applications. Moreover, I have a deep understanding of accessibility principles, ensuring that the websites I develop are inclusive and usable for all users. In my experience, I have worked with various CMSs, gaining versatility in adapting to different content management systems. Additionally, I have dedicated time to working with Vue.js, expanding my expertise in frontend frameworks. Overall, my specialized focus in front-end development, allows me to deliver high-quality and user-centric web applications.
                         </p>
+                        <br>
                         <p class="p-margin-left-small">
                          TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TESTTEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
                         TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
