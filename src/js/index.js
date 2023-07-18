@@ -80,19 +80,28 @@ if (window.screen.availWidth > 500) {
   menuComp.style.left = '18px';
 }
 
-const homeTemplate = document.getElementById('home');
+const loadTemplate = (templateId, hostElementId, insertAtStart) => {
+  const templateElement = document.getElementById(templateId);
+  const hostElement = document.getElementById(hostElementId);
+  hostElement.innerHTML = '';
+  const importedNode = document.importNode(templateElement.content, true);
+  const element = importedNode.firstElementChild;
+
+  const attach = (insertAtBeginning) => {
+    hostElement.insertAdjacentElement(
+      insertAtBeginning ? 'afterbegin' : 'beforeend',
+      element,
+    );
+  };
+
+  attach(insertAtStart);
+};
+
+loadTemplate('home', 'contentContainer', true);
 
 const tileFinderEl = document.querySelector('ws-hex-menu');
 tileFinderEl.addEventListener('wsTileSelected', (event) => {
-  const selected = document.getElementById(`${event.detail.substring(1)}`);
-  const content = selected.content.cloneNode(true);
-  const container = document.getElementById('contentContainer');
-  container.innerHTML = '';
-  container.appendChild(content);
-  container.removeAttribute('hidden');
-  if (selected === 'home') {
-    contentContainer.setAttribute('hidden', true);
-  }
+  loadTemplate(`${event.detail.substring(1)}`, 'contentContainer', true);
   setSectionColours(event.detail.substring(1));
 });
 
@@ -199,6 +208,7 @@ function submitTheFeedbackMessage() {
     toggleAni('.contact-button-wrapper', true);
 
     if (ok.checked || meh.checked || bad.checked) {
+      console.log(bad, meh, ok);
       const item = {
         ok: ok.checked,
         meh: meh.checked,
