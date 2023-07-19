@@ -86,15 +86,10 @@ const loadTemplate = (templateId, hostElementId, insertAtStart) => {
   hostElement.innerHTML = '';
   const importedNode = document.importNode(templateElement.content, true);
   const element = importedNode.firstElementChild;
-
-  const attach = (insertAtBeginning) => {
-    hostElement.insertAdjacentElement(
-      insertAtBeginning ? 'afterbegin' : 'beforeend',
-      element,
-    );
-  };
-
-  attach(insertAtStart);
+  hostElement.insertAdjacentElement(
+    insertAtStart ? 'afterbegin' : 'beforeend',
+    element,
+  );
 };
 
 loadTemplate('home', 'contentContainer', true);
@@ -104,18 +99,6 @@ tileFinderEl.addEventListener('wsTileSelected', (event) => {
   loadTemplate(`${event.detail.substring(1)}`, 'contentContainer', true);
   setSectionColours(event.detail.substring(1));
 });
-
-const defaultContent = homeTemplate.content.cloneNode(true);
-const defaultContainer = document.getElementById('contentContainer');
-defaultContainer.appendChild(defaultContent);
-
-let content = document.querySelector('.content');
-content.innerHTML = document.querySelector('.home').innerHTML;
-
-const changeLogo = (oldColour, newColour) => {
-  let root = document.documentElement;
-  root.style.setProperty(`${oldColour}`, `${newColour}`);
-};
 
 const setSectionColours = (section) => {
   switch (section) {
@@ -147,6 +130,11 @@ const setSectionColours = (section) => {
       changeLogo('--color-gen-1', '#f172a1;');
       changeLogo('--color-gen-4', 'rgb(240, 235, 244)');
   }
+};
+
+const changeLogo = (oldColour, newColour) => {
+  let root = document.documentElement;
+  root.style.setProperty(`${oldColour}`, `${newColour}`);
 };
 
 const setTheContactSection = () => {
