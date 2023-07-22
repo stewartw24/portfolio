@@ -80,16 +80,46 @@ if (window.screen.availWidth > 500) {
   menuComp.style.left = '18px';
 }
 
+const setTheFormListener = (elementId, callback) => {
+  const element = document.getElementById(elementId);
+  if (element) {
+    callback();
+    return;
+  }
+  const observer = new MutationObserver(() => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      observer.disconnect();
+      callback();
+    }
+  });
+  observer.observe(document.documentElement, {
+    childList: true,
+    subtree: true,
+  });
+};
+
 const loadTemplate = (templateId, hostElementId, insertAtStart) => {
   const templateElement = document.getElementById(templateId);
   const hostElement = document.getElementById(hostElementId);
   hostElement.innerHTML = '';
-  const importedNode = document.importNode(templateElement.content, true);
-  const element = importedNode.firstElementChild;
   hostElement.insertAdjacentElement(
     insertAtStart ? 'afterbegin' : 'beforeend',
-    element,
+    document.importNode(templateElement.content, true).firstElementChild,
   );
+  if (templateId === 'contact' || templateId === 'feedback') {
+    const buttonSelection =
+      templateId === 'contact' ? 'contact-submit' : 'feedback-submit';
+    setTheFormListener(buttonSelection, () => {
+      const element = document.getElementById(buttonSelection);
+      element.addEventListener('click', (e) => {
+        e.preventDefault();
+        templateId === 'contact'
+          ? submitTheContactMessage()
+          : submitTheFeedbackMessage();
+      });
+    });
+  }
 };
 
 loadTemplate('home', 'contentContainer', true);
@@ -137,86 +167,63 @@ const changeLogo = (oldColour, newColour) => {
   root.style.setProperty(`${oldColour}`, `${newColour}`);
 };
 
-const setTheContactSection = () => {
-  const content = document.getElementById('content');
-  content.innerHTML = theContactSection;
-  submitTheContactMessage();
-};
-
-function submitTheContactMessage() {
-  const contactForm = document.querySelector('#contactForm');
+const submitTheContactMessage = () => {
   const contactName = document.querySelector('#name');
   const contactEmail = document.querySelector('#email');
   const contactMessage = document.querySelector('#message');
 
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    toggleAni('.contact-button-wrapper', true);
+  if (contactName.value && contactEmail.value && contactMessage.value) {
+    const item = {
+      name: contactName.value,
+      email: contactEmail.value,
+      message: contactMessage.value,
+    };
 
-    if (contactName.value && contactEmail.value && contactMessage.value) {
-      const item = {
-        name: contactName.value,
-        email: contactEmail.value,
-        message: contactMessage.value,
-      };
-
-      sendHttpRequest(
-        'POST',
-        'https://firestore-api-server.herokuapp.com/api/contact',
-        item,
-      ).then((res) => {
-        if (res.status === 200) {
-          toggleAni('.contact-button-wrapper', false);
-          sendButtonFunctionality();
-          contactName.value = '';
-          contactEmail.value = '';
-          contactMessage.value = '';
-          disableButton('#contact-submit', true);
-        }
-      });
-    }
-  });
-}
-
-const setTheFeedbackSection = () => {
-  const content = document.getElementById('content');
-  content.innerHTML = theFeedbackSection;
-  submitTheFeedbackMessage();
+    sendHttpRequest(
+      'POST',
+      'https://firestore-api-server.herokuapp.com/api/contact',
+      item,
+    ).then((res) => {
+      if (res.status === 200) {
+        toggleAni('.contact-button-wrapper', false);
+        sendButtonFunctionality();
+        contactName.value = '';
+        contactEmail.value = '';
+        contactMessage.value = '';
+        disableButton('#contact-submit', true);
+      }
+    });
+  }
 };
 
 function submitTheFeedbackMessage() {
-  const feedbackForm = document.querySelector('#feedbackForm');
   const bad = document.querySelector('#bad');
   const meh = document.querySelector('#meh');
   const ok = document.querySelector('#ok');
   const feedbackMessage = document.querySelector('#commentMessage');
 
-  feedbackForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    toggleAni('.contact-button-wrapper', true);
+  toggleAni('.contact-button-wrapper', true);
 
-    if (ok.checked || meh.checked || bad.checked) {
-      console.log(bad, meh, ok);
-      const item = {
-        ok: ok.checked,
-        meh: meh.checked,
-        bad: bad.checked,
-        message: feedbackMessage.value,
-      };
-      sendHttpRequest(
-        'POST',
-        'https://firestore-api-server.herokuapp.com/api/feedback',
-        item,
-      ).then((res) => {
-        if (res.status === 200) {
-          toggleAni('.contact-button-wrapper', false);
-          sendButtonFunctionality();
-          feedbackMessage.value = '';
-          disableButton('#feedback-submit', true);
-        }
-      });
-    }
-  });
+  if (ok.checked || meh.checked || bad.checked) {
+    const item = {
+      ok: ok.checked,
+      meh: meh.checked,
+      bad: bad.checked,
+      message: feedbackMessage.value,
+    };
+    sendHttpRequest(
+      'POST',
+      'https://firestore-api-server.herokuapp.com/api/feedback',
+      item,
+    ).then((res) => {
+      if (res.status === 200) {
+        toggleAni('.contact-button-wrapper', false);
+        sendButtonFunctionality();
+        feedbackMessage.value = '';
+        disableButton('#feedback-submit', true);
+      }
+    });
+  }
 }
 
 const sendHttpRequest = async function (method, url, data) {
@@ -251,8 +258,6 @@ const sendButtonFunctionality = () => {
   const success = document.querySelector('.success');
   success.style.display = 'block';
   success.style.fill = 'var(--color-green)';
-  const buttonInstruction = document.querySelector('.button-instruction');
-  buttonInstruction.style.display = 'none';
   const hexBorder = document.querySelector('.hexagon-border');
   hexBorder.style.color = 'var(--color-green)';
   const contactButton = document.querySelector('.contact-button-wrapper');
