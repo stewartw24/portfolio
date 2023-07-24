@@ -103,6 +103,7 @@ const loadTemplate = (templateId, hostElementId, insertAtStart) => {
   const templateElement = document.getElementById(templateId);
   const hostElement = document.getElementById(hostElementId);
   hostElement.innerHTML = '';
+  console.log('inside loadTemplate');
   hostElement.insertAdjacentElement(
     insertAtStart ? 'afterbegin' : 'beforeend',
     document.importNode(templateElement.content, true).firstElementChild,
