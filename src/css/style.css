@@ -58,7 +58,7 @@
 
 body {
   font-family: 'Roboto Mono', monospace;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 16px;
   line-height: 1.2;
   color: var(--color-light-black);
@@ -523,7 +523,7 @@ h3 {
     drop-shadow(1px 1px 0px var(--color-purple))
     drop-shadow(-1px -1px 0px var(--color-purple))
     drop-shadow(-1px 1px 0px var(--color-purple))
-    drop-shadow(1px -1px 0px var(--color-purple)) contrast(70%);
+    drop-shadow(1px -1px 0px var(--color-purple));
   shape-outside: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   height: auto;
   margin: 0 auto;
@@ -572,16 +572,16 @@ h3 {
   overflow: hidden;
 }
 
-.card:hover .tran {
+/* .card:hover .tran {
   filter: contrast(100%);
   cursor: pointer;
-}
+} */
 
-.card:hover .card__text {
+/* .card:hover .card__text {
   opacity: 1;
-}
+} */
 
-.tran {
+/* .tran {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -590,7 +590,7 @@ h3 {
   filter: contrast(50%);
   overflow: hidden;
   transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
-}
+} */
 
 .card__content {
   display: flex;
@@ -616,7 +616,7 @@ h3 {
   font-size: 0.875rem;
   line-height: 1.5;
   z-index: 1;
-  opacity: 0;
+  /* opacity: 0; */
   transition: opacity 0.3s ease-in-out;
 }
 
