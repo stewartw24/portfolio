@@ -131,36 +131,30 @@ tileFinderEl.addEventListener('wsTileSelected', (event) => {
   setSectionColours(event.detail.substring(1));
 });
 
+const sectionColors = {
+  about: { '--color-gen-2': '#ff3366', '--color-gen-4': 'rgb(240, 235, 244)' },
+  home: { '--color-gen-2': '#f172a1', '--color-gen-4': 'rgb(240, 235, 244)' },
+  projects: {
+    '--color-gen-2': '#e64398',
+    '--color-gen-4': 'rgb(240, 235, 244)',
+  },
+  experience: {
+    '--color-gen-2': '#a1c3d1',
+    '--color-gen-4': 'rgb(240, 235, 244)',
+  },
+  contact: {
+    '--color-gen-2': '#cccccc',
+    '--color-gen-4': 'rgb(240, 235, 244)',
+  },
+  feedback: { '--color-gen-2': '#cb2d6f', '--color-gen-4': '#cccccc' },
+};
+
 const setSectionColours = (section) => {
-  switch (section) {
-    case 'about':
-      changeLogo('--color-gen-2', '#ff3366');
-      changeLogo('--color-gen-4', 'rgb(240, 235, 244)');
-      break;
-    case 'home':
-      changeLogo('--color-gen-2', '#f172a1');
-      changeLogo('--color-gen-4', 'rgb(240, 235, 244)');
-      break;
-    case 'projects':
-      changeLogo('--color-gen-2', '#e64398');
-      changeLogo('--color-gen-4', 'rgb(240, 235, 244)');
-      break;
-    case 'experience':
-      changeLogo('--color-gen-2', '#a1c3d1');
-      changeLogo('--color-gen-4', 'rgb(240, 235, 244)');
-      break;
-    case 'contact':
-      changeLogo('--color-gen-2', '#cccccc');
-      changeLogo('--color-gen-4', 'rgb(240, 235, 244)');
-      break;
-    case 'feedback':
-      changeLogo('--color-gen-2', '#cb2d6f');
-      changeLogo('--color-gen-4', '#cccccc');
-      break;
-    default:
-      changeLogo('--color-gen-1', '#f172a1;');
-      changeLogo('--color-gen-4', 'rgb(240, 235, 244)');
-  }
+  const colors = sectionColors[section] || {
+    '--color-gen-1': '#f172a1;',
+    '--color-gen-4': 'rgb(240, 235, 244)',
+  };
+  Object.entries(colors).forEach(([key, value]) => changeLogo(key, value));
 };
 
 const changeLogo = (oldColour, newColour) => {
