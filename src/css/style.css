@@ -501,8 +501,8 @@ body {
 
 h3 {
   box-sizing: border-box;
-  font-weight: lighter;
-  margin: 0;
+  font-weight: 800;
+  margin: 0 0 10px 0;
   text-shadow: 0 0.05em 0.1em rgba(var(--hex-text-shadow), 0.67);
 }
 
@@ -1101,4 +1101,8 @@ i {
 
 .form-padding {
   margin-left: 8%;
+}
+
+.highlight {
+  font-weight: 900;
 }
